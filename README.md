@@ -1,2 +1,5 @@
 # mastermind
- appli mastermind mode console
+appli mastermind mode console
+ - exemple de test unitaire
+
+
