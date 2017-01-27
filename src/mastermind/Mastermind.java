@@ -17,6 +17,7 @@ public class Mastermind {
 
      //static int[]  computerPlays = {9,5,3,8};
      static String[] displayCode = {"X","O","V"};
+     static String FOUNDPATTERN = "VVVV";
      
      static Scanner scan = new Scanner(System.in);
      
@@ -66,10 +67,11 @@ public class Mastermind {
            }
            
            
-           String res = playRound(computerPlay, playRaw);
+
+        String res = playRound(computerPlay, playRaw);
            System.out.println(res); 
            
-           //found = isFound(res);
+           found = res.equals(FOUNDPATTERN);
            
         }while(nbRound < 10 && !found);
         
@@ -103,7 +105,7 @@ public class Mastermind {
                 if (tmpPlay==computerPlay[j]){
                     if (i==j) { //meme place
                         res[i] = 2;
-                    }else{
+                    }else if (res[i]==0){ 
                         res[i] = 1;
                     }
                 }
